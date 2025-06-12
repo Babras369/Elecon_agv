@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+<robot name="agv_ellecon" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find agv_ellecon_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find agv_ellecon_description)/urdf/agv_ellecon.trans" />
+<xacro:include filename="$(find agv_ellecon_description)/urdf/agv_ellecon.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.018856286618438654 -0.025812794248427643 0.42365111962624147" rpy="0 0 0"/>
+    <mass value="71.39776739882976"/>
+    <inertia ixx="11.523639" iyy="15.126915" izz="18.391451" ixy="0.01583" iyz="-0.000111" ixz="-0.000305"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lf_wheel_1">
+  <inertial>
+    <origin xyz="2.9543579360136185e-06 0.05657049862602975 8.701762702401084e-06" rpy="0 0 0"/>
+    <mass value="4.655375351093154"/>
+    <inertia ixx="0.024469" iyy="0.038484" izz="0.024462" ixy="9e-06" iyz="3e-06" ixz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.392029 -0.343901 -0.12849" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/lf_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.392029 -0.343901 -0.12849" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/lf_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rf_wheel_1">
+  <inertial>
+    <origin xyz="6.3210132855151535e-06 -0.05657063621514408 8.612214607961466e-06" rpy="0 0 0"/>
+    <mass value="4.655375988852223"/>
+    <inertia ixx="0.024467" iyy="0.038484" izz="0.02446" ixy="-1e-05" iyz="-3e-06" ixz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.396358 0.396099 -0.12849" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/rf_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.396358 0.396099 -0.12849" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/rf_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lr_wheel_1">
+  <inertial>
+    <origin xyz="-6.726961082337279e-06 0.056570498624750276 8.701763778901084e-06" rpy="0 0 0"/>
+    <mass value="4.655375351308811"/>
+    <inertia ixx="0.024469" iyy="0.038482" izz="0.02446" ixy="-9e-06" iyz="3e-06" ixz="-4e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.435471 -0.343901 -0.12849" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/lr_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.435471 -0.343901 -0.12849" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/lr_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rr_wheel_1">
+  <inertial>
+    <origin xyz="-4.038059697897278e-06 -0.056570643500450934 8.732955321222313e-06" rpy="0 0 0"/>
+    <mass value="4.655376572811586"/>
+    <inertia ixx="0.024467" iyy="0.038482" izz="0.024458" ixy="1.1e-05" iyz="-3e-06" ixz="-3e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.431065 0.396099 -0.12849" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/rr_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.431065 0.396099 -0.12849" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/rr_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_mounting_1">
+  <inertial>
+    <origin xyz="-0.556443 0.026099 -0.192929" rpy="0 0 0"/>
+    <mass value="0.0"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.556443 0.026099 -0.192929" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/lidar_mounting_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.556443 0.026099 -0.192929" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/lidar_mounting_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-0.607248 0.079399 -0.207929" rpy="0 0 0"/>
+    <mass value="0.0"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.607248 0.079399 -0.207929" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.607248 0.079399 -0.207929" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find agv_ellecon_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="lf_joint" type="continuous">
+  <origin xyz="0.392029 0.343901 0.12849" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lf_wheel_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Revolute 32" type="continuous">
+  <origin xyz="0.396358 -0.396099 0.12849" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rf_wheel_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="lr_joint" type="continuous">
+  <origin xyz="-0.435471 0.343901 0.12849" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lr_wheel_1"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="rr_joint" type="continuous">
+  <origin xyz="-0.431065 -0.396099 0.12849" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rr_wheel_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="mb_joint" type="fixed">
+  <origin xyz="0.556443 -0.026099 0.192929" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_mounting_1"/>
+</joint>
+
+<joint name="lm_joint" type="fixed">
+  <origin xyz="0.050805 -0.0533 0.015" rpy="0 0 0"/>
+  <parent link="lidar_mounting_1"/>
+  <child link="lidar_1"/>
+</joint>
+
+</robot>
